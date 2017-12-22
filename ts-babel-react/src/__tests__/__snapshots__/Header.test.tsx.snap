@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the Header component correctly 1`] = `
+<nav>
+  <a
+    aria-current="true"
+    className="active"
+    href="/"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Home
+  </a>
+  <a
+    aria-current={false}
+    className={undefined}
+    href="/about"
+    onClick={[Function]}
+    style={undefined}
+  >
+    About
+  </a>
+  <a
+    aria-current={false}
+    className={undefined}
+    href="/team"
+    onClick={[Function]}
+    style={undefined}
+  >
+    Team
+  </a>
+</nav>
+`;

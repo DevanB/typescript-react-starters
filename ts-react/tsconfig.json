@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "baseUrl": "./src",
+    "paths": {
+      "components/*": ["./components/*"],
+      "pages/*": ["./pages/*"]
+    },
+    "jsx": "react",
+    "lib": [
+      "dom",
+      "es6"
+    ],
+    "moduleResolution": "node",
+    "module": "esnext",
+    "target": "es5",
+    "sourceMap": true
+  },
+  "include": [
+    "src/**/*"
+  ]
+}

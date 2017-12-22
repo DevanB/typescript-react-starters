@@ -1,0 +1,116 @@
+{
+  "name": "ts-babel-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "build": "rimraf build && webpack --config config/webpack.prod.js && npm run ssr",
+    "start": "webpack-dev-server --hot --config config/webpack.dev.js",
+    "ssr": "webpack --config config/webpack.server.js",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "ejs": "^2.5.7",
+    "file-loader": "^1.1.5",
+    "html-webpack-plugin": "^2.30.1",
+    "raw-loader": "^0.5.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-helmet": "^5.2.0",
+    "react-loadable": "^5.3.1",
+    "react-router-dom": "^4.2.2",
+    "rimraf": "^2.6.2",
+    "static-site-generator-webpack-plugin": "^3.4.1",
+    "ts-loader": "^3.2.0",
+    "tsconfig-paths-webpack-plugin": "^1.2.0",
+    "typescript": "^2.6.2",
+    "uglifyjs-webpack-plugin": "^1.0.1",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7",
+    "webpack-manifest-plugin": "^1.3.2",
+    "webpack-merge": "^4.1.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^21.1.9",
+    "@types/react": "^16.0.31",
+    "@types/react-dom": "^16.0.3",
+    "@types/webpack-env": "^1.13.3",
+    "jest": "^22.0.3",
+    "react-test-renderer": "^16.2.0",
+    "ts-jest": "^22.0.0",
+    "tslint": "^5.8.0",
+    "tslint-config-prettier": "^1.6.0",
+    "tslint-react": "^3.2.0"
+  },
+  "babel": {
+    "presets": [
+      "react",
+      [
+        "env",
+        {
+          "modules": false,
+          "targets": {
+            "browsers": [
+              "last 2 chrome versions",
+              "last 2 firefox versions",
+              "last 2 edge versions",
+              "last 2 ios versions",
+              "last 2 safari versions",
+              "last 2 chromeAndroid versions"
+            ],
+            "node": "current"
+          },
+          "debug": false
+        }
+      ]
+    ],
+    "plugins": [
+      "babel-plugin-syntax-dynamic-import",
+      "transform-class-properties",
+      "transform-object-rest-spread"
+    ]
+  },
+  "jest": {
+    "globals": {
+      "ts-jest": {
+        "useBabelrc": true
+      }
+    },
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "moduleNameMapper": {
+      "routes": "<rootDir>/src/routes.tsx",
+      "components/(.*)": "<rootDir>/src/components/$1",
+      "pages/(.*)": "<rootDir>/src/pages/$1"
+    },
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/config/",
+      "/build/"
+    ],
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(ts|tsx|js)$",
+    "transform": {
+      ".(ts|tsx)": "ts-jest"
+    }
+  }
+}
