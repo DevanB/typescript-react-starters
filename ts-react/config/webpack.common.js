@@ -5,7 +5,7 @@ const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 module.exports = {
   context: path.resolve(__dirname, '..', 'src'),
   entry: {
-    app: './index.ts',
+    app: './index.tsx',
     vendor: ['react', 'react-dom', 'react-router-dom', 'react-helmet']
   },
   plugins: [
@@ -21,7 +21,16 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/i,
-        use: ['ts-loader'],
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              babelrc: true,
+              plugins: ['react-hot-loader/babel']
+            }
+          },
+          'ts-loader'
+        ],
         exclude: /node_modules/
       },
       {

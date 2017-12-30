@@ -2,10 +2,6 @@
   "compilerOptions": {
     "allowJs": true,
     "baseUrl": "./src",
-    "paths": {
-      "components/*": ["./components/*"],
-      "pages/*": ["./pages/*"]
-    },
     "jsx": "react",
     "lib": [
       "dom",
@@ -13,8 +9,17 @@
     ],
     "moduleResolution": "node",
     "module": "esnext",
-    "target": "es5",
-    "sourceMap": true
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "paths": {
+      "components/*": ["./components/*"],
+      "pages/*": ["./pages/*"]
+    },
+    "rootDir": "src",
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "target": "es5"
   },
   "include": [
     "src/**/*"

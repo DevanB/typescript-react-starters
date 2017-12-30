@@ -6,7 +6,9 @@ import App from './App';
 function doRender(): void {
   const renderMethod = process.env.NODE_ENV === 'production' ? ReactDOM.hydrate : ReactDOM.render;
   renderMethod(
-    React.createElement(BrowserRouter, null, React.createElement(App, null)),
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>,
     document.getElementById('app')
   );
 }

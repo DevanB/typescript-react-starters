@@ -10,7 +10,7 @@ module.exports = {
   context: path.resolve(__dirname, '..', 'src'),
   target: 'node',
   entry: {
-    server: './server.ts'
+    server: '../server.ts'
   },
   output: {
     path: path.resolve(__dirname, '..', 'dist'),
