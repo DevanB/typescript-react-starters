@@ -2,7 +2,7 @@ import * as React from 'react';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import ejs from 'ejs';
+import * as ejs from 'ejs';
 
 import App from './App';
 import template from './index.ejs';
