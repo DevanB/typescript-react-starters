@@ -5,7 +5,7 @@ const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 module.exports = {
   context: path.resolve(__dirname, '..', 'src'),
   entry: {
-    app: './index.ts',
+    app: './index',
     vendor: ['react', 'react-dom', 'react-router-dom', 'react-helmet']
   },
   plugins: [

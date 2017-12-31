@@ -10,10 +10,16 @@ module.exports = merge(common, {
   output: {
     filename: '[name].js'
   },
-  devtool: '#sourcemap',
+  devtool: 'source-map',
   devServer: {
     contentBase: path.resolve(__dirname, '..', 'src'),
-    historyApiFallback: true
+    historyApiFallback: true,
+    host: process.env.HOST || 'localhost',
+    overlay: {
+      errors: true,
+      warnings: true
+    },
+    port: process.env.PORT || '3000'
   },
   plugins: [
     new webpack.DefinePlugin({
